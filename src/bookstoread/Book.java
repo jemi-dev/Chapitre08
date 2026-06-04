@@ -1,10 +1,9 @@
 package bookstoread;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.stream.DoubleStream;
 
-public class Book {
+public class Book implements Comparable<Book> {
     private final String title;
     private final String author;
     private final LocalDate publishedOn;
@@ -32,18 +31,8 @@ public class Book {
     }
 
 
-    public void addAll(List<String> list) {
-    }
-
-    public DoubleStream stream() {
-    }
-
-    public void add(String s) {
-    }
-
-    public boolean isEmpty() {
-    }
-
-    public int size() {
+    @Override
+    public int compareTo(Book that) {
+        return this.title.compareTo(that.title);
     }
 }
